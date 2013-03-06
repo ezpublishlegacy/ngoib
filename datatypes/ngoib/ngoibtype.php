@@ -7,7 +7,7 @@ class NgOibType extends eZDataType
 {
     const DATA_TYPE_STRING = "ngoib";
 
-    const OIB_VARIABLE = "_ngoib_oib_";
+    const OIB_VARIABLE = "_ngoib_data_text_";
     const OIB_FIELD = "data_text";
 
     /**
@@ -85,9 +85,9 @@ class NgOibType extends eZDataType
         /** @var eZContentClassAttribute $classAttribute */
         $classAttribute = $contentObjectAttribute->contentClassAttribute();
 
-        if ( $http->hasPostVariable( $base . "_ngoib_data_text_" . $contentObjectAttribute->attribute( "id" ) ) )
+        if ( $http->hasPostVariable( $base . self::OIB_VARIABLE . $contentObjectAttribute->attribute( "id" ) ) )
         {
-            $data = trim( $http->postVariable( $base . "_ngoib_data_text_" . $contentObjectAttribute->attribute( "id" ) ) );
+            $data = trim( $http->postVariable( $base . self::OIB_VARIABLE . $contentObjectAttribute->attribute( "id" ) ) );
 
             if ( empty( $data ) )
             {
@@ -123,9 +123,9 @@ class NgOibType extends eZDataType
      */
     function validateCollectionAttributeHTTPInput( $http, $base, $contentObjectAttribute )
     {
-        if ( $http->hasPostVariable( $base . "_ngoib_data_text_" . $contentObjectAttribute->attribute( "id" ) ) )
+        if ( $http->hasPostVariable( $base . self::OIB_VARIABLE . $contentObjectAttribute->attribute( "id" ) ) )
         {
-            $data = trim( $http->postVariable( $base . "_ngoib_data_text_" . $contentObjectAttribute->attribute( "id" ) ) );
+            $data = trim( $http->postVariable( $base . self::OIB_VARIABLE . $contentObjectAttribute->attribute( "id" ) ) );
 
             if ( empty( $data ) )
             {
@@ -161,9 +161,9 @@ class NgOibType extends eZDataType
      */
     function fetchObjectAttributeHTTPInput( $http, $base, $contentObjectAttribute )
     {
-        if ( $http->hasPostVariable( $base . "_ngoib_data_text_" . $contentObjectAttribute->attribute( "id" ) ) )
+        if ( $http->hasPostVariable( $base . self::OIB_VARIABLE . $contentObjectAttribute->attribute( "id" ) ) )
         {
-            $data = trim( $http->postVariable( $base . "_ngoib_data_text_" . $contentObjectAttribute->attribute( "id" ) ) );
+            $data = trim( $http->postVariable( $base . self::OIB_VARIABLE . $contentObjectAttribute->attribute( "id" ) ) );
             $contentObjectAttribute->setAttribute( self::OIB_FIELD, $data );
 
             return true;
@@ -185,9 +185,9 @@ class NgOibType extends eZDataType
      */
     function fetchCollectionAttributeHTTPInput( $collection, $collectionAttribute, $http, $base, $contentObjectAttribute )
     {
-        if ( $http->hasPostVariable( $base . "_ngoib_data_text_" . $contentObjectAttribute->attribute( "id" ) ) )
+        if ( $http->hasPostVariable( $base . self::OIB_VARIABLE . $contentObjectAttribute->attribute( "id" ) ) )
         {
-            $data = trim( $http->postVariable( $base . "_ngoib_data_text_" . $contentObjectAttribute->attribute( "id" ) ) );
+            $data = trim( $http->postVariable( $base . self::OIB_VARIABLE . $contentObjectAttribute->attribute( "id" ) ) );
             $collectionAttribute->setAttribute( self::OIB_FIELD, $data );
 
             return true;
