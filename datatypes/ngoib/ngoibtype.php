@@ -15,7 +15,7 @@ class NgOibType extends eZDataType
      */
     function __construct()
     {
-        parent::eZDataType( self::DATA_TYPE_STRING, ezpI18n::tr( "extension/ngoib/datatypes", "OIB" ), array( "serialize_supported" => true ) );
+        parent::eZDataType( self::DATA_TYPE_STRING, ezpI18n::tr( "extension/ngoib/datatypes", "Personal identification number" ), array( "serialize_supported" => true ) );
     }
 
     /**
@@ -99,7 +99,7 @@ class NgOibType extends eZDataType
             }
             else if ( !$this->validateOib( $data ) )
             {
-                $contentObjectAttribute->setValidationError( ezpI18n::tr( "extension/ngoib/datatypes", "OIB is not valid." ) );
+                $contentObjectAttribute->setValidationError( ezpI18n::tr( "extension/ngoib/datatypes", "Personal identification number is not valid." ) );
                 return eZInputValidator::STATE_INVALID;
             }
         }
