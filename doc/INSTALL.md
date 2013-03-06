@@ -28,4 +28,4 @@ Or go to Setup -> Extensions and click the "Regenerate autoload arrays" button
 
 ### Clear the caches
 
-Clear the INI and template override caches (from admin "Setup" tab or from command line).
+Clear the eZ Publish caches (from admin "Setup" tab or from command line).
