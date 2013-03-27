@@ -50,13 +50,12 @@ class NgOibType extends eZDataType
             return false;
         }
 
-        $oibDigits = array_map(
-            function( $character )
-            {
-                return (int) $character;
-            },
-            str_split( $data )
-        );
+        $oibDigits = array();
+        $data = str_split( $data );
+        for ( $i = 0, $length = count( $data ); $i < $length; $i++ )
+        {
+            $oibDigits[] = (int) $data[$i];
+        }
 
         $checksumDigit = 10;
         for ( $i = 0; $i < 10; $i++ )
