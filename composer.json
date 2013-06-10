@@ -1,0 +1,16 @@
+{
+    "name": "netgen/ngoib",
+    "description": "Netgen OIB is a simple eZ Publish extension that provides a datatype that validates and stores a personal identification number of Croatian citizens.",
+    "type": "ezpublish-legacy-extension",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Netgen",
+            "email": "info@netgen.hr"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "ezsystems/ezpublish-legacy-installer": "*"
+    }
+}
